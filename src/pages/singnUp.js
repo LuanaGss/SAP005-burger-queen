@@ -32,6 +32,7 @@ function SingnUp() {
               checked={role === "Garçom"}
               onChange={() => setRole("Garçom")}
             />
+            Garçom
           </label>
           </div>
         <form className="form">
