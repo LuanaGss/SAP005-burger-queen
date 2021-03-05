@@ -6,6 +6,7 @@ import menuburguer from '../images/menuburguer.png';
 import add from '../images/add.png';
 import del from '../images/del.png';
 import { useState } from 'react';
+import {ConvertDate, ConvertTime} from './service.js';
 
 function Historic() {
     const [orders, setOrders] = useState([]);
@@ -18,6 +19,7 @@ function Historic() {
     const rWaiter=()=> {
         history.push('/Waiter')
       }
+
 
       function post (e){
         e.preventDefault();
@@ -51,6 +53,21 @@ function Historic() {
                         setOrders(newOrders)})
       }
 
+      const fetchData = () => {
+        fetch('https://lab-api-bq.herokuapp.com/orders', {
+           method: "GET",
+           headers: {
+             "Content-Type": "application/json",
+             "accept": "application/json",
+             'Authorization': `${token}`
+           }                  
+               })
+                 .then((response) => response.json())
+                 .then((json) => {
+                   setOrders(json);
+                 })
+             }
+
     return (
 
       <div className="AppHistoric">
@@ -66,9 +83,6 @@ function Historic() {
             </nav>
           </div>
         </div>
-
-        
-
         <header className="App-Historic">
   
           <img src= {logo} alt="" className="logoHistoric"/>
@@ -86,12 +100,7 @@ function Historic() {
             return (
               <div className="H" key={order.id}>
                 <p className="btnLabel">
-                <label className="entregue">
-                    <input
-                      type="radio"
-                      onChange={() => ("Entregue")}
-                 /> Entregue </label>
-
+                <p  className="date">Data: {ConvertDate(order.createdAt)} {ConvertTime(order.createdAt)}</p>
                <button className="btnDel"   onClick={(e)=>{
                 delet(e, order.id, index)
                  }}><img src= {del} alt="" className='imgDel' /></button> 
@@ -110,6 +119,26 @@ function Historic() {
                       )
                     })
                   }
+
+          <button className="food" onClick={(e)=>{
+              e.preventDefault();
+              fetch(`https://lab-api-bq.herokuapp.com/orders/${order.id}`, {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json",
+                    "accept": "application/json",
+                    'Authorization': `${token}`
+                  }  
+                , body: JSON.stringify({"status": "Entregue" })              
+          
+              })
+                      .then((response) => response.json())
+                      .then((json) => {
+                        fetchData();
+                        console.log(json);
+                       })
+                  }}>Pedido Entregue</button>
+
 
                 </div>
                 
