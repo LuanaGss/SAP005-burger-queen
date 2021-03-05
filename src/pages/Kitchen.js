@@ -35,6 +35,23 @@ function Kitchen() {
             })
         }
 
+    const putOrder = (e, id, index)=>{
+          fetch(`https://lab-api-bq.herokuapp.com/orders/${id}`, {
+              method: "PUT",
+              headers: {
+                "Content-Type": "application/json",
+                "accept": "application/json",
+                'Authorization': `${token}`
+              }  
+            , body: JSON.stringify({"status": "Pronto" })              
+      
+          })
+                  .then((response) => response.json())
+                  .then((json) => {
+                    const newOrders= [...orders]
+                    newOrders.splice(index, 1)
+                    setOrders(newOrders)})
+  }
   
    
   return (
@@ -56,13 +73,18 @@ function Kitchen() {
       </header>
      <section className="section">
 
-      { orders.map((order) => {
+      { orders.map((order, index) => {
         return (
           <div className="Cl" key={order.id}>
             <p  className="date">Data: {ConvertDate(order.createdAt)} {ConvertTime(order.createdAt)}</p>
+            <p>
+            <button className="food"   onClick={(e)=>{
+                      putOrder(e, order.id, index)
+                    }}>Pedido Pronto</button> 
+              </p>     
             <p  className="tble">Mesa: {order.table}</p> 
             <p  className="status">Status: {order.status}</p>
-            <p className="pedido">Pedido:</p>
+            <p className="pedido">Pedido:</p> 
             <div>
             
               {
@@ -70,29 +92,12 @@ function Kitchen() {
                   return(
                     <div key={product.id}> 
                     <p className="prod">{product.name}</p>
+                    
+
                     </div>
                   )
                 })
               }
-              <button className="food" onClick={(e)=>{
-              e.preventDefault();
-              fetch(`https://lab-api-bq.herokuapp.com/orders/${order.id}`, {
-                  method: "PUT",
-                  headers: {
-                    "Content-Type": "application/json",
-                    "accept": "application/json",
-                    'Authorization': `${token}`
-                  }  
-                , body: JSON.stringify({"status": "Pronto" })              
-          
-              })
-                      .then((response) => response.json())
-                      .then((json) => {
-                        fetchData();
-                        console.log(json);
-                       })
-                  }}>Pedido Pronto</button>
-
             </div>
             
           </div>
