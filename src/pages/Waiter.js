@@ -151,7 +151,7 @@ const Waiter = () => {
                         </div>
                       </div>
                       <ul >R$:{menuItems.price},00</ul>
-                      <button className="btnTeste" onClick={() => clickQuantidade(menuItems)}>+</button>
+                      <button className="btnQuantidade" onClick={() => clickQuantidade(menuItems)}>+</button>
 
                     </div>
                   </div>
@@ -185,7 +185,7 @@ const Waiter = () => {
                   </ol>
                   <p className='orderProducts'>R$:{item.price},00</p>
                   <p className='complement'> {item.qtd}</p>
-                  <button className="btnLess" onClick={(e) => clickLess(e, item)}>-</button>                
+                  <button className="btnQuantidade" onClick={(e) => clickLess(e, item)}>-</button>                
                 </span>
               </div>
 
