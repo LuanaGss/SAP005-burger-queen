@@ -93,7 +93,6 @@ const Waiter = () => {
   }, [quantidade]
   )
 
-
   return (
 
     <div className="App">
@@ -193,7 +192,6 @@ const Waiter = () => {
             )}
             <p className="total">Total: R$:{total},00</p>
           </div>
-
           <button className='send' onClick={((e) => {
             e.preventDefault();
             fetch(`https://lab-api-bq.herokuapp.com/orders`, {
@@ -205,16 +203,16 @@ const Waiter = () => {
               },
               body: JSON.stringify({
                 "client": `${client}`,
-                "table": `${table}`,
+                "table":`${table}`,
                 "products": quantidade.map((item) => (
                   {
                     "id": Number(item.id),
-                    "qtd": `${quantidade}`
+                    "qtd":`${quantidade}`
                   }
                 ))
-
-
-              })
+      
+                
+              }) 
             })
               .then((response) => response.json())
               .then((json) => {
