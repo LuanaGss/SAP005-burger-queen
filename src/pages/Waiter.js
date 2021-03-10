@@ -23,8 +23,11 @@ const Waiter = () => {
 
 
   const history = useHistory()
-  const rLogin = () => {
-    history.push('/')
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    history.push('/');
   }
 
   const Historic = () => {
@@ -53,7 +56,6 @@ const Waiter = () => {
         setHamburguer(hamburguer)
         setDrinks(drinks)
         setSide(side)
-        console.log(json)
       })
 
   }, [token])
@@ -103,7 +105,7 @@ const Waiter = () => {
       <div class="menuLateral">
         <nav>
           <a href={Historic}><div onClick={Historic} className="link">Historico</div></a>
-          <a href={rLogin}><div onClick={rLogin} className="link">Sair</div></a>
+          <a href={logout}><div onClick={logout} className="link">Sair</div></a>
         </nav>
       </div>
       <header className="header">
@@ -112,7 +114,7 @@ const Waiter = () => {
         </div>
       </header>
       <ol className="App-waiter">
-        <section className='Menu'>
+        <div className="btns">
           <button className="btnMenu" onClick={((e) => {
             e.preventDefault();
             setBreakfast(menu)
@@ -132,7 +134,8 @@ const Waiter = () => {
             e.preventDefault();
             setBreakfast(drinks)
           })}><img src={copo} alt="" className='imgMenu' /></button>
-
+          </div>
+          <section className='Menu'>
           <div className='menuItens'> {
             breakfast.map((menuItems) => {
 
@@ -140,18 +143,18 @@ const Waiter = () => {
 
                 <div className="Produtos">
                   <div key={menuItems.id}>
-                    <div className="teste">
+                    <div className="Allday">
                       <div className='nameProducts'>
                         <ul>{menuItems.name}</ul>
                       </div>
                       <div className='sabor'>
                         <ul>{menuItems.flavor}</ul>
-                        <div className='complement'>
+                        <div>
                           <ul>{menuItems.complement}</ul>
                         </div>
                       </div>
                       <ul >R$:{menuItems.price},00</ul>
-                      <button className="btnTeste" onClick={() => clickQuantidade(menuItems)}>+</button>
+                      <button className="btnQtd" onClick={() => clickQuantidade(menuItems)}>+</button>
 
                     </div>
                   </div>
@@ -210,22 +213,15 @@ const Waiter = () => {
                     "qtd":`${quantidade}`
                   }
                 ))
-      
-                
               }) 
             })
               .then((response) => response.json())
               .then((json) => {
-                console.log(json);
-                setClient('');
-                setTable('');
-                setQuantidade([]);
               })
-            console.log('foi')
           })} >ENVIAR</button>
-
         </form>
       </ol>
+      
     </div >
   )
 }
