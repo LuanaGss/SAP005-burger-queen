@@ -62,17 +62,23 @@
 	font-family: Arial;
 	text-align: center;
 	float: right;
-	color: #ffde59;
+	color: white;
 	background-color: rgb(41, 39, 39);
 	border-radius: 9px;
 	margin: 26px;
 	width: 45%;
-	height: 700px;
-	margin-top: 112px;
+	height: 691px;
+	margin-top: 65px;
 	overflow: auto;
 }
 
+#logoWaiter {
+	display: flex;
+	justify-content: center;
+}
+
 #client {
+	display: flex;
 	padding: 11px;
 	width: 50%;
 	margin-top: 20px;
@@ -87,13 +93,13 @@
 }
 
 #products {
+	display: flex;
 	padding: 11px;
 	width: 80%;
 	margin-top: 20px;
 	justify-content: center;
 	border-radius: 9px;
 	height: 250px;
-	align-items: center;
 	outline: none;
 	color: white;
 	border: none;
@@ -157,15 +163,15 @@ h1 {
 }
 .btnQtd {
 	border: none;
-    margin: 20px;
-    align-items: center;
-    margin-top: 23px;
-    height: 36px;
-    width: 47px;
-    background-color: #ffde59;
-    font-size: 30px;
-    border-radius: 38px;
-    outline: none;
+	margin: 20px;
+	align-items: center;
+	margin-top: 23px;
+	height: 45px;
+	width: 46px;
+	background-color: #ffde59;
+	font-size: 35px;
+	border-radius: 43px;
+	outline: none;
 }
 
 .btnMenu {
@@ -179,8 +185,20 @@ h1 {
 	outline: none;
 }
 
-.Produtos {
+.divSpan { 
 	display: flex;
+	justify-content: space-around;
+} */
+.divResume {
+	width: 90%;
+	height: 70%;
+	border-radius: 9px;
+	box-shadow: rgb(68, 64, 64) 11px 11px 57px,rgba(68, 64, 64, 0.794) -11px -11px 57px;
+	
+}
+
+.Produtos {
+	
 	width: 90%;
 }
 
@@ -228,59 +246,41 @@ ul {
 }
 
 .nameProducts {
-	font-size: 20px;
+	margin-left: -10px;
+	width: 150px;
 }
 
-.orderProducts {
-	font-size: 20px;
-    padding: 4px;
-    margin-top: 10px;
+.nameProduct {
+	margin-left: -10px;
+	width: 150px;
+	padding-left: 50px;
 }
 
-.sabor {
-	width: 60px;
-	height: 20px;
-	margin-left: 60px;
-	margin-right: 40px;
+
+.complement {
+	margin-top: -30px;
+	width: 50px;
 }
 
-.file {
-	background: transparent;
-	border: none;
+.complemente {
+	width: 50px;
+	margin-left: -200px;
+	margin-top: 10px;
 }
+
 .spanQuantidade{
 	display: flex;
 	justify-content: space-between;
 	width: 420px;
 	padding: 20px;
 	font-size: 20px;
-	color: #ffde59;
+	color: white;
 }
-.total{
-	color: #ffde59;
-}
+
 .divOrder {
 	display: flex;
 	justify-content: space-around;
-}
- .p{
-	margin-left: 56px;
- }
-.btnLess{
-	height: 36px;
-    width: 37px;
-    border: none;
-    align-items: center;
-    background-color: #ffde59;
-    font-size: 30px;
-    border-radius: 38px;
-    outline: none;
-	margin: 15px;
-}
-
-.complement{
-	margin-top: 7px;
-	padding: 6px;
+	color:#f4f4f9;
 }
 
 .Map{
