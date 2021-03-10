@@ -39,6 +39,24 @@ function Kitchen() {
             })
         }
 
+
+  //       const putPreparing = (e, id)=>{
+  //         fetch(`https://lab-api-bq.herokuapp.com/orders/${id}`, {
+  //             method: "PUT",
+  //             headers: {
+  //               "Content-Type": "application/json",
+  //               "accept": "application/json",
+  //               'Authorization': `${token}`
+  //             }  
+  //           , body: JSON.stringify({"status": "Preparando" })              
+      
+  //         })
+  //                 .then((response) => response.json())
+  //                 .then((json) => {
+  //                   setOrders()
+  //                 })
+  // }    
+
     const putOrder = (e, id, index)=>{
           fetch(`https://lab-api-bq.herokuapp.com/orders/${id}`, {
               method: "PUT",
@@ -82,6 +100,10 @@ function Kitchen() {
           <div className="Cl" key={order.id}>
             <p  className="date">Data: {ConvertDate(order.createdAt)} {ConvertTime(order.createdAt)}</p>
             <p>
+            {/* <button className="food"   onClick={(e)=>{
+                      putPreparing(e,order.id)
+                    }}>Preparando</button>  */}
+
             <button className="food"   onClick={(e)=>{
                       putOrder(e, order.id, index)
                     }}>Pedido Pronto</button> 

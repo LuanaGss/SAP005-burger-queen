@@ -5,6 +5,7 @@ import SignUp from './pages/SignUp';
 import Waiter from './pages/Waiter';
 import Kitchen from './pages/Kitchen';
 import Historic from './pages/Historic';
+import giphy from './images/giphy.gif';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import { isAuthenticated } from "./route-auth";
@@ -31,7 +32,7 @@ ReactDOM.render(
        <PrivateRoute path ='/waiter' component={Waiter} exact /> 
        <PrivateRoute path ='/kitchen' component={Kitchen} exact /> 
        <PrivateRoute path ='/Historic' component={Historic} /> 
-      <Route component={() => <div>Page 404</div>}/>
+      <Route component={() => <div className="error">Page 404 <img src= {giphy} alt="" className='giphy' /></div>}/>
     </Switch>
   </BrowserRouter>,
 
