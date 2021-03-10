@@ -38,7 +38,6 @@
 .logoWaiter {
 	width: 20%;
     margin-top: 72px;
-    margin-left: 40%;
 }
 
 .AppWaiter {
@@ -60,16 +59,16 @@
 
 .order {
 	font-family: Arial;
-	text-align: center;
-	float: right;
-	color: white;
-	background-color: rgb(41, 39, 39);
-	border-radius: 9px;
-	margin: 26px;
-	width: 45%;
-	height: 691px;
-	margin-top: 65px;
-	overflow: auto;
+    text-align: center;
+    float: right;
+    color: white;
+    background-color: rgb(41, 39, 39);
+    border-radius: 9px;
+    margin: 26px;
+    width: 45%;
+    height: 691px;
+    margin-top: 11%;
+    overflow: auto;
 }
 
 #logoWaiter {
@@ -78,7 +77,6 @@
 }
 
 #client {
-	display: flex;
 	padding: 11px;
 	width: 50%;
 	margin-top: 20px;
@@ -129,12 +127,12 @@ h1 {
 
 
 	.Menu {
-		background-color: rgb(41, 39, 39);
 		border-radius: 9px;
-		width: 47%;
+		width: 48%;
 		height: 100%;
+		background-color: rgb(41, 39, 39);
 		float: left;
-		margin-top: 200px;
+		margin-top: 207px;
 		margin-left: 22px;
 		overflow: auto;
 	}
@@ -188,17 +186,15 @@ h1 {
 .divSpan { 
 	display: flex;
 	justify-content: space-around;
-} */
+} 
 .divResume {
 	width: 90%;
 	height: 70%;
 	border-radius: 9px;
-	box-shadow: rgb(68, 64, 64) 11px 11px 57px,rgba(68, 64, 64, 0.794) -11px -11px 57px;
-	
+	box-shadow: rgb(68, 64, 64) 11px 11px 57px,rgba(68, 64, 64, 0.794) -11px -11px 57px;	
 }
 
-.Produtos {
-	
+.Produtos {	
 	width: 90%;
 }
 
@@ -246,20 +242,12 @@ ul {
 }
 
 .nameProducts {
-	margin-left: -10px;
 	width: 150px;
 }
 
 .nameProduct {
-	margin-left: -10px;
 	width: 150px;
 	padding-left: 50px;
-}
-
-
-.complement {
-	margin-top: -30px;
-	width: 50px;
 }
 
 .complemente {
@@ -287,6 +275,12 @@ ul {
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 22px;
+}
+
+.ComplementItem,
+.complementQtd,
+.price{
+    margin-top: 37px;
 }
 /*********************MenuHamburger*********************/
 

@@ -186,9 +186,9 @@ const Waiter = () => {
                   <p className='complement'>{item.flavor}</p>
                   <p className='complement'>{item.complement}</p>
                   </ol>
-                  <p className='orderProducts'>R$:{item.price},00</p>
-                  <p className='complement'> {item.qtd}</p>
-                  <button className="btnQuantidade" onClick={(e) => clickLess(e, item)}>-</button>                
+                  <p className='price'>R$:{item.price},00</p>
+                  <p className='complementQtd'> {item.qtd}</p>
+                  <button className="btnQtd" onClick={(e) => clickLess(e, item)}>-</button>                
                 </span>
               </div>
 
