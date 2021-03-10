@@ -5,7 +5,7 @@ import logo from '../images/logo.png';
 import menuburguer from '../images/menuburguer.png';
 import add from '../images/add.png';
 import {useState} from 'react';
-import {ConvertDate, ConvertTime} from './service.js';
+import {ConvertDate, ConvertTime} from './utils.js';
 
 
 
@@ -15,9 +15,13 @@ function Kitchen() {
   const productId = sessionStorage.getItem("product.id");
   console.log(productId); 
 
+
   const history = useHistory()
-  const rLogin = () => {
-    history.push('/')
+  const logout = (e) => {
+    e.preventDefault();
+    localStorage.removeItem("token");
+    localStorage.removeItem("id");
+    history.push('/');
   }
 
   const fetchData = () => {
@@ -33,7 +37,7 @@ function Kitchen() {
             .then((json) => {
               setOrders(json);
             })
-        }
+        }  
 
     const putOrder = (e, id, index)=>{
           fetch(`https://lab-api-bq.herokuapp.com/orders/${id}`, {
@@ -62,7 +66,7 @@ function Kitchen() {
 
         <div class="menuLateral">
           <nav>
-            <a href={rLogin}><div onClick={rLogin} className="link">Sair</div></a>
+            <a href={logout}><div onClick={logout} className="link">Sair</div></a>
           </nav>
         </div>
       </div>
@@ -78,6 +82,7 @@ function Kitchen() {
           <div className="Cl" key={order.id}>
             <p  className="date">Data: {ConvertDate(order.createdAt)} {ConvertTime(order.createdAt)}</p>
             <p>
+
             <button className="food"   onClick={(e)=>{
                       putOrder(e, order.id, index)
                     }}>Pedido Pronto</button> 

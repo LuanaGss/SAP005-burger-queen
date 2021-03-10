@@ -38,7 +38,6 @@
 .logoWaiter {
 	width: 20%;
     margin-top: 72px;
-    margin-left: 40%;
 }
 
 .AppWaiter {
@@ -51,7 +50,7 @@
 	display: flex;
 	justify-content: center;
 	position: fixed;
-	margin-top: 68px;
+	margin-top: 112px;
 	background-color: rgb(41, 39, 39);
 	border-radius: 9px;
 	width: 47%;
@@ -60,16 +59,16 @@
 
 .order {
 	font-family: Arial;
-	text-align: center;
-	float: right;
-	color: white;
-	background-color: rgb(41, 39, 39);
-	border-radius: 9px;
-	margin: 26px;
-	width: 45%;
-	height: 691px;
-	margin-top: 65px;
-	overflow: auto;
+    text-align: center;
+    float: right;
+    color: white;
+    background-color: rgb(41, 39, 39);
+    border-radius: 9px;
+    margin: 26px;
+    width: 45%;
+    height: 691px;
+    margin-top: 11%;
+    overflow: auto;
 }
 
 #logoWaiter {
@@ -78,7 +77,6 @@
 }
 
 #client {
-	display: flex;
 	padding: 11px;
 	width: 50%;
 	margin-top: 20px;
@@ -127,17 +125,18 @@ h1 {
 	font-family: Arial;
 }
 
-.Menu {
-	background-color: rgb(41, 39, 39);
-	border-radius: 9px;
-	width: 47%;
-	height: 100%;
-	float: left;
-	margin-top: 112px;
-	margin-left: 22px;
-	text-align: center;
-	overflow: auto;
-}
+
+	.Menu {
+		border-radius: 9px;
+		width: 48%;
+		height: 100%;
+		background-color: rgb(41, 39, 39);
+		float: left;
+		margin-top: 207px;
+		margin-left: 22px;
+		overflow: auto;
+	}
+
 
 .send {
 	text-align: center;
@@ -160,7 +159,7 @@ h1 {
 .imgteste {
 	height: 40px;
 }
-.btnQuantidade {
+.btnQtd {
 	border: none;
 	margin: 20px;
 	align-items: center;
@@ -187,17 +186,15 @@ h1 {
 .divSpan { 
 	display: flex;
 	justify-content: space-around;
-} */
+} 
 .divResume {
 	width: 90%;
 	height: 70%;
 	border-radius: 9px;
-	box-shadow: rgb(68, 64, 64) 11px 11px 57px,rgba(68, 64, 64, 0.794) -11px -11px 57px;
-	
+	box-shadow: rgb(68, 64, 64) 11px 11px 57px,rgba(68, 64, 64, 0.794) -11px -11px 57px;	
 }
 
-.Produtos {
-	
+.Produtos {	
 	width: 90%;
 }
 
@@ -206,7 +203,7 @@ ul {
 	display: flex;
 }
 
-.teste {
+.Allday {
 	display: flex;
 	justify-content: space-between;
 	width: 440px;
@@ -245,20 +242,12 @@ ul {
 }
 
 .nameProducts {
-	margin-left: -10px;
 	width: 150px;
 }
 
 .nameProduct {
-	margin-left: -10px;
 	width: 150px;
 	padding-left: 50px;
-}
-
-
-.complement {
-	margin-top: -30px;
-	width: 50px;
 }
 
 .complemente {
@@ -286,6 +275,12 @@ ul {
 	display: flex;
 	justify-content: space-around;
 	margin-bottom: 22px;
+}
+
+.ComplementItem,
+.complementQtd,
+.price{
+    margin-top: 37px;
 }
 /*********************MenuHamburger*********************/
 
@@ -352,6 +347,39 @@ nav a {
 
 .btn-burguer {
 	width: 60px;
-	margin: 20px;
+}
+
+.Allday {
+	display: flex;
+	justify-content: space-between;
+	width: 440px;
+	margin: 8px;
+	box-shadow: rgb(68 64 64) 11px 11px 57px, rgb(68 64 64 / 79%) -11px -11px 57px;
+	border-radius: 9px;
+	padding: 10px;
+	margin-top: 9px;
 }
 /*********************MenuHamburger*********************/
+
+@media only screen and (min-width: 1024px) {
+.App-waiter {
+	overflow: auto;
+}
+.btns, 
+.Menu{
+	width: 30%;
+	margin-left: 20%;
+}
+.btns{
+	margin-top: 100px;
+}
+
+.logoWaiter{
+	width: 10%;
+}
+
+.order{
+ width:30%;
+ margin-top: 100px;
+}
+}

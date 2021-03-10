@@ -6,7 +6,7 @@ import menuburguer from '../images/menuburguer.png';
 import add from '../images/add.png';
 import del from '../images/del.png';
 import { useState } from 'react';
-import {ConvertDate, ConvertTime} from './service.js';
+import {ConvertDate, ConvertTime} from './utils.js';
 
 function Historic() {
     const [orders, setOrders] = useState([]);
@@ -91,7 +91,7 @@ function Historic() {
             <button className="btnAddH"   onClick={(e)=>{
               post(e)}}><img src= {add} alt="" className='imgMenu' /></button>
           </section>
-        </header>
+       
         
        <section className="sectionH">
 
@@ -148,12 +148,9 @@ function Historic() {
           })}
 
       </section>
-        
+      </header> 
       </div>
     );
   }
-  
-
-
 
 export default Historic;
