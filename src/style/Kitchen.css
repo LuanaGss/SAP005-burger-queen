@@ -187,3 +187,16 @@ nav a {
 	width: 60px;
 }
 /*********************MenuHamburger*********************/
+
+@media only screen and (min-width: 1024px) {
+	.logoKitchen{
+		width: 15%;
+		display: flex;
+		justify-content: center;
+		margin-left: 43%;
+	}
+
+	.Cl{
+		width: 25%;;
+	}
+}

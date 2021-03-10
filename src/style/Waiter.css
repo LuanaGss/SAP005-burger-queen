@@ -365,5 +365,21 @@ nav a {
 .App-waiter {
 	overflow: auto;
 }
+.btns, 
+.Menu{
+	width: 30%;
+	margin-left: 20%;
+}
+.btns{
+	margin-top: 100px;
+}
 
+.logoWaiter{
+	width: 10%;
+}
+
+.order{
+ width:30%;
+ margin-top: 100px;
+}
 }

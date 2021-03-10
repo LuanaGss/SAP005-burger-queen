@@ -27,6 +27,7 @@ a, .pRegister {
 	margin-top: 36px;
 	color: white;
 	width: 300px;
+	text-align: center;
 }
 
 #pass, #password, #email, #name {

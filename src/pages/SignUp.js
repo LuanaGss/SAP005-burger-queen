@@ -11,8 +11,7 @@ function SignUp() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState('');
-  //const [confirme, setConfirme] = useState(true)
-
+ 
   const history = useHistory()
   const rLogin = () => {
     history.push('/')

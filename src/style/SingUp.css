@@ -8,9 +8,8 @@
 .logoS {
 	display: flex;
 	justify-content: center;
-	width: 55%;
+	width: 25%;
 	margin-top: 15%;
-	margin-bottom: 20px;
 }
 
 .logop {
@@ -73,4 +72,16 @@
 	min-height: 100vh;
 	font-size: calc(10px + 2vmin);
 	color: white;
+}
+
+
+@media only screen and (min-width: 1024px) {
+	.logoS {
+		width: 18%;
+		margin-top: 10px;
+		flex-direction: column;
+	}
+	.divRegister {
+		width: 50%;
+	}
 }
